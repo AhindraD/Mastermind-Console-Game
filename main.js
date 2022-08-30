@@ -2,6 +2,7 @@ const readlineSync = require('readline-sync');
 
 function startGame() {
     console.log(`M A S T E R M I N D`);
+    console.log('\n');
 
     const DIGITS = 4;
     let turns = 0;
@@ -33,7 +34,8 @@ function startGame() {
         } else {
             console.log(`${correctPos} matching digit(s) in the Correct position`);
             console.log(`${incorrectPos} matching digit(s) in the IN-Correct position`);
-            console.log(`${9 - turn} chances remaining!`);
+            console.log(`${9 - turns} chances remaining!`);
+            console.log('\n');
         }
         turns++;
         if (turns < 10) {
