@@ -2,13 +2,13 @@ const readlineSync = require('readline-sync');
 const colors = require('colors');
 
 function startGame() {
-    console.log("M A S T E R M I N D".bold.bgBrightCyan);
+    console.log(" M A S T E R M I N D ".bold.bgBrightCyan);
     console.log('\n');
 
     const DIGITS = 4;
     let turns = 0;
     let won = false;
-    let correctAns = [2, 4, 2, 4];
+    let correctAns = [4, 4, 1, 2];
     // for (let i = 0; i < DIGITS; i++) {
     //     let tempDigit = Math.ceil(Math.random() * 5);
     //     correctAns.push(tempDigit);
@@ -26,6 +26,7 @@ function startGame() {
             if (tempInp === copy[i]) {
                 correctPos++;
                 copy[i] = 'done';
+                currInput[i] = 'done';
             }
         }
         for (let i = 0; i < currInput.length; i++) {
