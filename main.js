@@ -33,6 +33,7 @@ function startGame() {
         } else {
             console.log(`${correctPos} matching digit(s) in the Correct position`);
             console.log(`${incorrectPos} matching digit(s) in the IN-Correct position`);
+            console.log(`${9 - turn} chances remaining!`);
         }
         turns++;
         if (turns < 10) {
