@@ -1,7 +1,8 @@
 const readlineSync = require('readline-sync');
+const colors = require('colors');
 
 function startGame() {
-    console.log(`M A S T E R M I N D`);
+    console.log("M A S T E R M I N D".bold.bgBrightCyan);
     console.log('\n');
 
     const DIGITS = 4;
@@ -12,7 +13,7 @@ function startGame() {
         let tempDigit = Math.ceil(Math.random() * 5);
         correctAns.push(tempDigit);
     }
-    let currInput = readlineSync.question(`${turns + 1}) Guess the 4-digit code: `);
+    let currInput = readlineSync.question(`${turns + 1}) Guess the 4-digit code: `.blue);
     while (turns < 10 && currInput.toLowerCase() !== "quit") {
         currInput = currInput.split('');
         let correctPos = 0;
@@ -32,23 +33,23 @@ function startGame() {
             console.log("Correct - You win!");
             break;
         } else {
-            console.log(`${correctPos} matching digit(s) in the Correct position`);
-            console.log(`${incorrectPos} matching digit(s) in the IN-Correct position`);
-            console.log(`${9 - turns} chances remaining!`);
+            console.log(`${correctPos} matching digit(s) in the Correct position`.green);
+            console.log(`${incorrectPos} matching digit(s) in the IN-Correct position`.green);
+            console.log(`${9 - turns} chances remaining!`.green);
             console.log('\n');
         }
         turns++;
         if (turns < 10) {
-            currInput = readlineSync.question(`${turns + 1}) Guess the 4-digit code: `);
+            currInput = readlineSync.question(`${turns + 1}) Guess the 4-digit code: `.blue);
         } else {
             break;
         }
     }
     if (won) {
-        console.log("Correct - You win!");
+        console.log("Correct - You win!".bold.rainbow);
     }
     else {
-        console.log(`You lose. Code was ${correctAns.join('')}`);
+        console.log(`You lose. Code was ${correctAns.join('')}`.bold.america);
     }
     return;
 }
