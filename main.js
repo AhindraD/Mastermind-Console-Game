@@ -45,7 +45,7 @@ function startGame() {
         console.log("Correct - You win!");
     }
     else {
-        console.log(`You lose. Code was ${correctAns}`);
+        console.log(`You lose. Code was ${correctAns.join('')}`);
     }
     return;
 }
